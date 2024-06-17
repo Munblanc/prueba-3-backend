@@ -1,0 +1,23 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+#rate {
+    font-size: 24px;
+    color: blueviolet;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+}

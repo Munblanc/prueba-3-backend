@@ -1,0 +1,8 @@
+.fondo{
+    background-image: url(bg.png);
+    height: 1800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

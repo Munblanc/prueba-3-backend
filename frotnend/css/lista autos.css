@@ -1,0 +1,88 @@
+/* lista autos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h2, h3 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.form-group label {
+    color: white; /* Cambia el color del texto de los labels a blanco */
+}
+
+.btn-primary {
+    background-color: blueviolet;
+    border-color: blueviolet;
+}
+
+.btn-primary:hover {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+}
+
+.table th, .table td {
+    border: 1px solid blueviolet;
+    padding: 8px;
+}
+
+.table th {
+    background-color: blueviolet;
+    color: white;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.table tbody tr:hover {
+    background-color: #dcdcdc;
+}
+
+/* Agrega estas reglas CSS al final de tu archivo CSS */
+
+nav {
+    background-color: blueviolet;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Tamaño de la fuente del texto del logotipo */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Color del texto de los enlaces de la barra de navegación */
+    font-size: 1.2rem; /* Tamaño de la fuente de los enlaces de la barra de navegación */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa; /* Color del texto de los enlaces de navegación al pasar el mouse */
+}
+
+.navbar-toggler {
+    border-color: white; /* Color del borde del botón de alternancia de la barra de navegación */
+}
+
+.navbar-toggler-icon {
+    background-color: white; /* Color del icono de alternancia de la barra de navegación */
+}
+
+header {
+    background-color: blueviolet;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
