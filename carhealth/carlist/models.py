@@ -2,13 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, timedelta
 
-# Create your models here.
-# class Usuario(models.Model):
-#     id = models.AutoField(primary_key=True, unique=True, null=False)
-#     Usuario = models.CharField(max_length=100)
-#     email = models.CharField(max_length=100)
-#     password = models.CharField(max_length=100)
-#     telefono = models.CharField(max_length=100)
+
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now_add=True)
@@ -28,7 +22,7 @@ class Auto(models.Model):
     Placa = models.CharField(max_length=100)
     Fecha_fabricacion = models.DateField(max_length=100)
     Combustible = models.CharField(max_length=100)
-    User = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Usuarios", default=1)  # Añade un valor por defecto de 1
+    #User = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Usuarios", default=1)  # Añade un valor por defecto de 1
 
 class Chequeo(models.Model):
     id = models.AutoField(primary_key=True, unique=True, null=False)

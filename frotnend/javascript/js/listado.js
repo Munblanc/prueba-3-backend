@@ -103,6 +103,7 @@ function editvehicle(button) {
             },
             error: function(error) {
                 console.error('Error updating vehicle:', error);
+                window.location.href = "lista autos.html";
             }
         }); 
     }
