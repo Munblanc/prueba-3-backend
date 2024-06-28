@@ -55,7 +55,19 @@ function addvehicle() {
     var vehicle = { marca, modelo, color, placa, anio, combustible, aceite, kilometraje };
     
     appendvehicleToTable(vehicle.marca, vehicle.modelo, vehicle.color, vehicle.placa, vehicle.anio, vehicle.combustible, vehicle.aceite, vehicle.kilometraje);
-    saveProductToStorage(vehicle);
+    
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/Auto/", 
+        type: 'POST',
+        data: JSON.stringify(vehicle),
+        contentType: 'application/json',
+        success: function(response) {
+            console.log('Vehiculo registrado exitosamente:', response);
+        },
+        error: function(error) {
+            console.error('Error en la creacion del vehiculo:', error);
+        }
+    });
 }
 
 function editvehicle(button) {
@@ -107,6 +119,19 @@ function editvehicle(button) {
         $(button).text('Editar').removeClass('btn-success').addClass('btn-info');
         $(button).next().text('Eliminar').removeClass('btn-warning').addClass('btn-danger');
         updateVehicleInStorage(row.index(), newmarca, newmodelo, newcolor, newplaca, newanio, newcombustible, newaceite, newkilometraje);
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/Auto/",
+            type: 'PUT',
+            data: JSON.stringify({ marca: newmarca, modelo: newmodelo, color: newcolor, placa: newplaca, anio: newanio, combustible: newcombustible, aceite: newaceite, kilometraje: newkilometraje }),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log('Vehicle updated successfully:', response);
+            },
+            error: function(error) {
+                console.error('Error updating vehicle:', error);
+            }
+        }); 
     }
 }
 
@@ -149,6 +174,18 @@ function deletevehicle(button) {
         localStorage.setItem("vehicles", JSON.stringify(vehicles));
         removefromstorage(row.index());
         row.remove();
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/Auto/",
+            type: 'DELETE',
+            success: function(response) {
+                console.log('Vehicle deleted successfully:', response);
+                row.remove();
+            },
+            error: function(error) {
+                console.error('Error deleting vehicle:', error);
+            }
+        });
     }
 }
 function removefromstorage(index) {
@@ -190,3 +227,5 @@ function saveProductToStorage(vehicle) {
     vehicles.push(vehicle);
     localStorage.setItem("vehicles", JSON.stringify(vehicles));
 }
+
+ 

@@ -1,7 +1,8 @@
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from.models import Auto,Usuario
-from.serializers import AutoSerializer,UsuarioSerializer, UserSerializer
+from.models import Auto, User,Subscription,Chequeo
+from.serializers import *
+from datetime import datetime, timedelta
 
 # Create your views here.
 class AutoViewset(viewsets.ModelViewSet):
@@ -12,6 +13,10 @@ class UserViewset(viewsets.ModelViewSet):
     queryset=User.objects.all()
     serializer_class = UserSerializer
 
-class UsuarioViewset(viewsets.ModelViewSet):
-    queryset=Usuario.objects.all()
-    serializer_class = UsuarioSerializer    
+class SubscriptionViewset(viewsets.ModelViewSet):
+    queryset=Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
+
+class ChequeoViewset(viewsets.ModelViewSet):
+    queryset=Chequeo.objects.all()
+    serializer_class = ChequeoSerializer        

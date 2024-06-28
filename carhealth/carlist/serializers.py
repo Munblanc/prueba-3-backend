@@ -1,11 +1,7 @@
 from rest_framework import serializers
-from .models import Usuario,Auto
-from django.contrib.auth.models import User
+from.models import Auto, User,Subscription,Chequeo
+from django.contrib.auth.models import *
 
-class UsuarioSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Usuario
-        fields = '__all__'
         
 class AutoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,4 +11,14 @@ class AutoSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):  
     class Meta:
         model = User
-        fields = '__all__'         
+        fields = '__all__'      
+
+class SubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subscription
+        fields = '__all__'
+
+class ChequeoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Chequeo
+        fields = '__all__'
