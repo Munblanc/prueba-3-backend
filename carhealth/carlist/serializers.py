@@ -11,7 +11,7 @@ class AutoSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):  
     class Meta:
         model = User
-        fields = '__all__'      
+        fields = ['id', 'username','password', 'email']  
 
 class SubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
